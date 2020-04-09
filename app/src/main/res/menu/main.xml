@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group>
+    <item android:title="ဗားရှင်းအသစ်စစ်ဆေးမည်" android:id="@+id/checkUpdate"/>
+    <item android:title="အခြား App များဖြင့်ဒေါင်းရန်" android:checkable="true" android:id="@+id/dlOther"/>
+</group>
+</menu>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Htetz Naing</string>
+    <string name="dev_name">Developed By Khun Htetz Naing</string>
+    <string name="mp3">MP3</string>
+    <string name="mp4">MP4</string>
+    <string name="if_you_want_mp3">MP3 လိုချင်ပါက</string>
+    <string name="tap_it">ကိုနှိပ်ပါ 🙄</string>
+    <string name="if_you_want_mp4">MP4 လိုချင်ပါက</string>
+    <string name="click_and">ကိုနှိပ်ပြီး 😋</string>
+    <string name="you_can_download">အလွယ်တကူဒေါင်းယူနိုင်ပါတယ် 😉</string>
+    <string name="share">မျှဝေမည်</string>
+    <string name="title_songs">သီချင်းများ</string>
+    <string name="title_download">ဒေါင်းလုဒ်</string>
+    <string name="title_about">အကြောင်း</string>
+    <string name="share_video_message_body">This video is shared via Khun Htetz Naing App :</string>
+    <string name="id_for_check_file">_zApp</string>
+    <string name="no_files">မည်သည့်ဖိုင်မှမရှိပါ။</string>
+
+    <string name="updated_date">နောက်ဆုံးထွက်ရှိသောရက်စွဲ : ၁၀၊ ၀၄၊ ၂၀၂၀</string>
+    <string name="version">ဗားရှင်း : 1.0</string>
+    <string name="developer">ဖန်တီးသူ : ခွန်ထက်နိုင်</string>
+    <string name="desc">ယခု Application သည် ကျွန်တော် \"ခွန်ထက်နိုင်\" ၏ သီချင်းများ အလွယ်တကူဒေါင်းယူနိုင်ရန်ဖန်တီးထားခြင်းဖြစ်ပါသည်။ သီချင်းအသစ်ထွက်တိုင်းယခု App မှတဆင့်နားဆင်ဒေါင်းယူနိုင်သလို Facebook နှင့် Youtube များတွင်လည်း ရှာဖွေစောင့်မျှော်နားဆင်နိုင်ပါသည်။</string>
+    <string name="go_to_fb_page">Facebook Page သို့သွားရန်</string>
+    <string name="listen_on_joox">Joox မှာနားဆင်မည်</string>
+    <string name="no_internet">အင်တာနက်ကွန်ယက်မရှိပါ။</string>
+</resources>

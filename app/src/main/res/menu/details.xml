@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:title="@string/share" android:icon="@drawable/ic_share" android:id="@+id/share" app:showAsAction="always"/>
+    <item android:title="@string/listen_on_joox" android:icon="@drawable/ic_joox" android:id="@+id/joox" app:showAsAction="always"/>
+</menu>

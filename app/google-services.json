@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "574729577703",
+    "firebase_url": "https://khun-htetz-naing.firebaseio.com",
+    "project_id": "khun-htetz-naing",
+    "storage_bucket": "khun-htetz-naing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574729577703:android:cb953f41802cab83e3ae42",
+        "android_client_info": {
+          "package_name": "com.htetznaing.songs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574729577703-nde027rmlp568ogh4niuc5ddtr0q9ogn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArW3NrJukrb2NnWYlxZOtg3FdBkLG1ODs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574729577703-nde027rmlp568ogh4niuc5ddtr0q9ogn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
