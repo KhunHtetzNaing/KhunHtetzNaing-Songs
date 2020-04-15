@@ -16,6 +16,7 @@ import com.htetznaing.songs.API;
 import com.htetznaing.songs.AppUpdater.AppUpdater;
 import com.htetznaing.songs.R;
 import com.htetznaing.songs.Utils.DownloadWithOther;
+import com.htetznaing.songs.ui.home.SongsFragment;
 import com.htetznaing.songs.ui.home.SongsViewModel;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
@@ -124,6 +128,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.checkUpdate:
                 appUpdater.check(true);
+                break;
+            case R.id.switch_view:
+                boolean isSwitched = SongsFragment.adapter.toggleItemViewType();
+                item.setIcon(isSwitched ? getResources().getDrawable(R.drawable.ic_list_view) : getResources().getDrawable(R.drawable.ic_grid) );
+                SongsFragment.recyclerView.setLayoutManager(isSwitched ? new LinearLayoutManager(this) : new GridLayoutManager(this, 2));
+                SongsFragment.adapter.notifyDataSetChanged();
                 break;
         }
         return super.onOptionsItemSelected(item);

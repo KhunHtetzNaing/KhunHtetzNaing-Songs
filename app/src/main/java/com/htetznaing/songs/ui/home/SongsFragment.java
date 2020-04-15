@@ -29,8 +29,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SongsFragment extends Fragment {
-    private SongsAdapter adapter;
-    private RecyclerView recyclerView;
+    public static SongsAdapter adapter;
+    public static RecyclerView recyclerView;
     private List<Songs> data = new ArrayList<>();
     private TextView no_net;
     private SwipeRefreshLayout swipeRefresh;

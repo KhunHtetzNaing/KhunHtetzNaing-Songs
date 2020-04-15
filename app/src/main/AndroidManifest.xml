@@ -29,8 +29,8 @@
         </provider>
 
         <activity
-            android:name=".Activities.DetailsActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout" />
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:name=".Activities.DetailsActivity" />
         <activity
             android:name=".Activities.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"

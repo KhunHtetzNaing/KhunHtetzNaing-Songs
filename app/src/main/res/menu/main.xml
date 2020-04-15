@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <group>
+    <item android:icon="@drawable/ic_grid" android:id="@+id/switch_view" android:title="Switch View" app:showAsAction="always"/>
     <item android:title="ဗားရှင်းအသစ်စစ်ဆေးမည်" android:id="@+id/checkUpdate"/>
     <item android:title="အခြား App များဖြင့်ဒေါင်းရန်" android:checkable="true" android:id="@+id/dlOther"/>
 </group>

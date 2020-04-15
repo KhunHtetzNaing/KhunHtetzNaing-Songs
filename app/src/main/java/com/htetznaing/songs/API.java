@@ -1,6 +1,7 @@
 package com.htetznaing.songs;
 
 import android.os.AsyncTask;
+import android.os.Handler;
 
 import com.google.gson.Gson;
 import com.htetznaing.songs.Activities.MainActivity;
@@ -14,6 +15,19 @@ import java.util.Arrays;
 
 public class API {
     public void load(){
+        Handler handler = new Handler();
+        int delay = 15000; //milliseconds
+
+        handler.postDelayed(new Runnable(){
+            public void run(){
+                loadData();
+                handler.postDelayed(this, delay);
+            }
+        }, delay);
+        loadData();
+    }
+
+    private void loadData(){
         new AsyncTask<Void,Void,String>() {
             @Override
             protected String doInBackground(Void... voids) {
@@ -45,7 +59,9 @@ public class API {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 if (s!=null){
-                    MainActivity.songsViewModel.getData().setValue(Arrays.asList(new Gson().fromJson(s, Songs[].class)));
+                    if (MainActivity.instance!=null) {
+                        MainActivity.songsViewModel.getData().setValue(Arrays.asList(new Gson().fromJson(s, Songs[].class)));
+                    }
                 }
             }
         }.execute();

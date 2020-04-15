@@ -14,15 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.htetznaing.songs.Constants;
 import com.htetznaing.songs.R;
 import com.htetznaing.songs.Model.Songs;
 import com.htetznaing.songs.Utils.DownloadWithOther;
 import com.htetznaing.songs.Utils.XDownloader;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -30,10 +28,11 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public class DetailsActivity extends AppCompatActivity {
-    YouTubePlayerView youTubePlayerView;
     TextView info;
     Songs data = null;
     XDownloader xDownloader;
@@ -50,16 +49,11 @@ public class DetailsActivity extends AppCompatActivity {
             finish();
         }
         setTitle(data.getTitle());
-        youTubePlayerView = findViewById(R.id.youtube_player_view);
-        getLifecycle().addObserver(youTubePlayerView);
 
-        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
-            @Override
-            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
-                String videoId = data.getYoutube();
-                youTubePlayer.loadVideo(videoId, 0);
-            }
-        });
+        JCVideoPlayerStandard jcVideoPlayerStandard = findViewById(R.id.videoplayer);
+        JCVideoPlayer.WIFI_TIP_DIALOG_SHOWED = true;
+        jcVideoPlayerStandard.setUp(data.getVideo(), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "");
+        jcVideoPlayerStandard.thumbImageView.setImageURI(Uri.parse(data.getImg()));
 
         info = findViewById(R.id.info);
         info.setText(data.getInfo());
@@ -180,6 +174,19 @@ public class DetailsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if (JCVideoPlayer.backPress()) {
+            return;
+        }
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JCVideoPlayer.releaseAllVideos();
+    }
+
+    public void youtube(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://youtu.be/"+data.getYoutube())));
     }
 }
